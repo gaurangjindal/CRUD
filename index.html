@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My CRUD Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="controller.js"></script>
+</head>
+
+<body>
+    <div ng-app="mainApp" ng-controller="mycontroller">
+        <table>
+
+           <tr>
+               <td>ID</td>
+               <td>{{Id}}</td>
+           </tr>
+           <tr>
+               <td>Name</td>
+               <td><input type="text" ng-model="name"></td>
+           </tr>
+           <tr>
+            <td>Salary</td>
+            <td><input type="text" ng-model="salary"></td>
+        </tr>
+        <tr>
+            <td><input type="button" ng-click="addData()" value="Save Data"></td>
+        </tr>
+        </table>
+        <br>
+        <hr>
+        <table border="1" style="width:300px;">
+            <thead>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Salary</td>
+            </thead>
+            <tr ng-repeat="emp in emplist track by $index">
+                <td>{{emp.Id}}</td>
+                <td>{{emp.Name}}</td>
+                <td>{{emp.Salary}}</td>
+                <td><input type="button" value="Delete" ng-click="delete(emp)"></td>
+                <td><input type="button" value="Edit" ng-click="edit(emp)"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
